@@ -1,0 +1,17 @@
+light-mode:
+
+HOVER:
+border: 8px solid var(--highlight-color-light-mode, rgba(0, 0, 0, 0.10));
+
+
+
+
+
+
+
+
+
+dark-mode:
+
+HOVER:
+border: 8px solid var(--highlight-color-dark-mode, rgba(255, 255, 255, 0.20));

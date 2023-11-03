@@ -1,0 +1,171 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --text-color: #FFF;
+    --bg-url: url(/assests/bg-mobile.jpg);
+    --surface-color:rgba(255, 255, 255, 0.10);
+    --stroke-color:rgba(255, 255, 255, 0.50);
+    --highlight-color:rgba(255, 255, 255, 0.20);
+    --toggle-handle-color: #FFF;
+    --switch-bg-url:url(/assests/MoonStars.svg);
+    --box-shadow: rgba(0, 0, 0, 0.25);
+
+}
+.light{
+    --text-color: #000;
+    --bg-url: url(/assests/bg-mobile-light.jpg);
+    --surface-color:rgba(0, 0, 0, 0.05);
+    --stroke-color:rgba(0, 0, 0, 0.50);
+    --highlight-color:rgba(0, 0, 0, 0.10);
+    --switch-bg-url: url(/assests/Sun.svg);
+    --box-shadow: rgba(0, 0, 0, 0.10);
+}
+
+body{
+    /*Atalho: background: color image repeat position/size */
+    background: var(--bg-url) no-repeat top center/cover;
+}
+body *{
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+}
+#container{
+    width: 360px;
+    /*margin: auto;Para centralizar a div. existe uma regra css que o margin:auto não aplica na vertical.*/
+    margin: 56px auto 32px;
+    padding: 0 24px;
+}
+
+/* Switch */
+#switch{
+    position: relative;
+    width: 64px;
+    margin: 4px auto;
+}
+#switch button{
+    width: 32px;
+    height: 32px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--toggle-handle-color) var(--switch-bg-url) no-repeat center;
+    padding: 8px;
+    box-shadow: 0px 2px 8px 0px var(--box-shadow);
+
+    position: absolute;
+    top:50%;
+    left: 0;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+#switch button:hover{
+    outline: 8px solid var(--highlight-color);
+}
+#switch span{
+    display: block;
+    width: 64px;
+    height: 24px;
+    flex-shrink: 0;
+    border-radius: 9999px;
+    border: 1px solid var(--stroke-color);
+    background: var(--surface-color);
+    backdrop-filter: blur(4px);
+}
+.light #switch button{
+    right: 0;
+    left: initial;
+}
+
+/* Profile */
+#profile{
+    text-align: center;/*Centralizando a img. Elementos Inline aceitam o text-align do elemento pai.*/
+    padding: 24px;
+}
+
+#profile img{
+    width: 112px;
+}
+
+#profile p{
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+    margin-top: 8px;
+}
+/* links */
+ul{
+    list-style: none;
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+ul li a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    padding: 16px 24px;
+
+    backdrop-filter: blur(4px);
+    background: var(--surface-color);
+    border-radius: 8px;
+    border: 1px solid var(--stroke-color);
+
+    text-decoration: none;
+    font-weight: 500;
+
+    transition: background .2s;
+}
+
+ul li a:hover{
+    border-radius: 8px;
+    border: 1.5px solid var(--text-color);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(4px);
+}
+
+/*social links*/
+#social-links{
+    display: flex;
+    padding: 24px 0;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 24px;
+    
+}
+
+#social-links a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+
+    transition: background o.2s;
+    border-radius: 50%;
+}
+
+#social-links a:hover{
+    background: var(--highlight-color);
+}
+
+/* footer */
+footer{
+    display: flex;
+    padding: 24px 0;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+
+    color: var(--text-color);
+
+    /* text-sm */
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px; /* 171.429% */
+}
