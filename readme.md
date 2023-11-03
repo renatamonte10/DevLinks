@@ -1,7 +1,7 @@
 <h1 align="center"> DevLinks </h1>
 
 <p align="center">
-Programa feito através da tirlha Discover da Rocketseat<br/>
+Programa feito através da trilha Discover da Rocketseat<br/>
 </p>
 
 <p align="center">
